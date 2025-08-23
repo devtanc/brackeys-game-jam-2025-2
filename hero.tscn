@@ -1,6 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6w8e33btnlcb"]
+[gd_scene load_steps=4 format=3 uid="uid://c6w8e33btnlcb"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_t4edt"]
+[ext_resource type="SpriteFrames" uid="uid://viey56cjw1q3" path="res://assets/sprite_frames/hero_sprite_frames.tres" id="1_780bu"]
+[ext_resource type="Script" uid="uid://de1e6mu35c832" path="res://scripts/hero.gd" id="1_p1r5x"]
 
-[node name="Hero" type="AnimatedSprite2D"]
-sprite_frames = SubResource("SpriteFrames_t4edt")
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p1r5x"]
+radius = 4.0
+height = 10.0
+
+[node name="Hero" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_p1r5x")
+
+[node name="Character" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -7)
+sprite_frames = ExtResource("1_780bu")
+animation = &"attack"
+frame_progress = 0.0241814
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_p1r5x")
