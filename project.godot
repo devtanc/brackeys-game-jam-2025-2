@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Brackeys Game Jam 2025 2"
+run/main_scene="uid://cv2kgmyqp0g1f"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
