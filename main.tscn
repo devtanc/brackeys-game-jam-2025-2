@@ -1,5 +1,23 @@
-[gd_scene format=3 uid="uid://cv2kgmyqp0g1f"]
+[gd_scene load_steps=4 format=3 uid="uid://cv2kgmyqp0g1f"]
+
+[ext_resource type="PackedScene" uid="uid://bgtbvmuxbusxn" path="res://tilemap.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://c6w8e33btnlcb" path="res://hero.tscn" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://d2xl0pnqbcy21" path="res://assets/lighting/point_light.webp" id="3_h2yge"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="Tilemap" parent="." instance=ExtResource("1_ig7tw")]
+position = Vector2(-250, -56)
+
+[node name="Hero" parent="." instance=ExtResource("2_0xm2m")]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Hero"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="PointLight2D" type="PointLight2D" parent="Hero"]
+shadow_enabled = true
+texture = ExtResource("3_h2yge")
+texture_scale = 0.5
