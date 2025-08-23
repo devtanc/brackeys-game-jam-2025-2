@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://bikaknrdmghfm"]
+
+[ext_resource type="Texture2D" uid="uid://bg6rkjfncr7nh" path="res://assets/items and trap_animation/keys/keys_1_3.png" id="1_7uyv8"]
+[ext_resource type="Texture2D" uid="uid://bxr2xksohnj5j" path="res://assets/items and trap_animation/keys/keys_1_4.png" id="2_quh8w"]
+[ext_resource type="Texture2D" uid="uid://jhr7w2pmkngs" path="res://assets/items and trap_animation/keys/keys_1_2.png" id="3_xdfh2"]
+[ext_resource type="Texture2D" uid="uid://cm7qw8bqoen1c" path="res://assets/items and trap_animation/keys/keys_1_1.png" id="4_147q3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n6304"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7uyv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_quh8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xdfh2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_147q3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xdfh2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_quh8w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7uyv8"]
+size = Vector2(11, 8)
+
+[node name="GoldKey" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_n6304")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_7uyv8")
