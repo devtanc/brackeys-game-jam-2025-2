@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=4 uid="uid://bgtbvmuxbusxn"]
 
 [ext_resource type="TileSet" uid="uid://c71w64v5b0b2x" path="res://assets/tilemaps/tilemap.tres" id="1_1i3gi"]
-[ext_resource type="Texture2D" uid="uid://d2xl0pnqbcy21" path="res://assets/lighting/point_light.webp" id="2_nsmjb"]
+[ext_resource type="PackedScene" uid="uid://3jvjk265rwol" path="res://flicker_light.tscn" id="2_nsmjb"]
 
 [node name="Tilemap" type="Node2D"]
 
@@ -10,14 +10,20 @@ tile_map_data = PackedByteArray("AADy//v/AgAAAAAAAADy//z/AgAAAAEAAADy//3/AgAAAAI
 tile_set = ExtResource("1_1i3gi")
 
 [node name="Dungeon" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAABAPP/BQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD///z/BQAAAAAAAAABAPj/BQAAAAAAAAD5//j/BQAAAAAAAAA=")
 tile_set = ExtResource("1_1i3gi")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.403922, 0.368627, 0.470588, 1)
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(24, -198)
-color = Color(1, 0.894118, 0.203922, 1)
-shadow_enabled = true
-texture = ExtResource("2_nsmjb")
+[node name="FlickerLight" parent="." instance=ExtResource("2_nsmjb")]
+position = Vector2(-8, -54)
+lo = 0.62
+
+[node name="FlickerLight2" parent="." instance=ExtResource("2_nsmjb")]
+position = Vector2(24, -118)
+lo = 0.62
+
+[node name="FlickerLight3" parent="." instance=ExtResource("2_nsmjb")]
+position = Vector2(-104, -118)
+hi = 0.54

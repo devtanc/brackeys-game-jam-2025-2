@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://3jvjk265rwol"]
+
+[ext_resource type="Texture2D" uid="uid://d2xl0pnqbcy21" path="res://assets/lighting/point_light.webp" id="1_4cj3j"]
+[ext_resource type="Script" uid="uid://xecd4laehyu3" path="res://scripts/flicker_light.gd" id="2_pbe18"]
+
+[node name="FlickerLight" type="PointLight2D"]
+color = Color(1, 0.47451, 0.415686, 1)
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 25.0
+texture = ExtResource("1_4cj3j")
+height = 10.0
+script = ExtResource("2_pbe18")
