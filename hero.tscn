@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6w8e33btnlcb"]
+[gd_scene load_steps=5 format=3 uid="uid://c6w8e33btnlcb"]
 
 [ext_resource type="SpriteFrames" uid="uid://viey56cjw1q3" path="res://assets/sprite_frames/hero_sprite_frames.tres" id="1_780bu"]
 [ext_resource type="Script" uid="uid://de1e6mu35c832" path="res://scripts/hero.gd" id="1_p1r5x"]
+[ext_resource type="Texture2D" uid="uid://d2xl0pnqbcy21" path="res://assets/lighting/point_light.webp" id="3_u1ipw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p1r5x"]
 radius = 4.0
@@ -21,3 +22,11 @@ frame_progress = 0.0241814
 position = Vector2(0, -6)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_p1r5x")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -8)
+rotation = -1.5708
+color = Color(0.454902, 0.643137, 0.670588, 1)
+energy = 0.5
+texture = ExtResource("3_u1ipw")
+texture_scale = 0.3
