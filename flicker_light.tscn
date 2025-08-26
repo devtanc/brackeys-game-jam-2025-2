@@ -7,7 +7,7 @@
 color = Color(1, 0.47451, 0.415686, 1)
 shadow_enabled = true
 shadow_filter = 1
-shadow_filter_smooth = 25.0
+shadow_filter_smooth = 15.0
 texture = ExtResource("1_4cj3j")
 height = 10.0
 script = ExtResource("2_pbe18")
